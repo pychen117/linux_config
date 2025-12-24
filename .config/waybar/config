@@ -1,0 +1,71 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 34,
+    "margin-top": 5,
+    "margin-left": 10,
+    "margin-right": 10,
+
+    "modules-left": ["niri/workspaces", "niri/window"],
+    "modules-center": ["clock", "cpu", "custom/fan", "memory", "network", "pulseaudio", "battery"],
+    "modules-right": ["tray"],
+
+    "niri/workspaces": {
+        "format": "{index} <span color='#585b70'>:</span> {icon}",
+        "format-icons": {
+            "default": "󰊠",
+            "focused": "󰮯",
+            "urgent": "󰀨"
+        }
+    },
+
+    "niri/window": {
+        "format": "{title}",
+        "max-length": 35,
+        "separate-outputs": true
+    },
+
+    "network": {
+        "interval": 2,
+        "format-wifi": " {bandwidthDownBytes:3}  {bandwidthUpBytes:3}  <span size='large'></span>",
+        "format-ethernet": " {bandwidthDownBytes:3}  {bandwidthUpBytes:3} 󰈀",
+        "format-disconnected": "󰖪 Off"
+    },
+
+    "cpu": {
+        "format": " {usage}% <span color='#585b70'>@</span> {avg_frequency}GHz",
+        "interval": 2
+    },
+
+    "custom/fan": {
+        "format": "󰈐 {} RPM",
+        "interval": 2,
+        "exec": "sensors | grep -i 'fan' | awk '{print $2}' | head -n 1",
+        "tooltip": false
+    },
+
+    "memory": {
+        "format": " {percentage}%",
+        "interval": 2
+    },
+
+    "clock": {
+        "format": "󰃭 {:%a %b %d  %H:%M:%S}",
+        "interval": 1
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-icons": ["󰕿", "󰖀", "󰕾"]
+    },
+
+    "battery": {
+        "format": "{icon} {capacity}%",
+        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+    },
+
+    "tray": {
+        "icon-size": 25,
+        "spacing": 10
+    }
+}
