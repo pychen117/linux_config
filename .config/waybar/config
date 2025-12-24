@@ -1,14 +1,15 @@
+
 {
     "layer": "top",
     "position": "top",
-    "height": 50,
-    "margin-top": 5,
+    "height": 40,
+    "margin-top": 0,
     "margin-left": 10,
     "margin-right": 10,
 
-    "modules-left": ["niri/workspaces", "niri/window", "mpris"],
-    "modules-center": ["clock", "cpu", "memory", "custom/fan",],
-    "modules-right": ["network", "pulseaudio", "battery", "tray"],
+    "modules-left": ["niri/workspaces", "niri/window" ],
+    "modules-center": ["mpris", "clock", "cpu", "memory", "custom/fan",],
+    "modules-right": ["network", "pulseaudio", "battery", "tray" ],
 
     "niri/workspaces": {
         "format": "{index} <span color='#585b70'>:</span> {icon}",
@@ -31,8 +32,8 @@
         "max-length": 25,
         "interval": 0.8, 
         "on-click": "playerctl play-pause",
-        "on-scroll-up": "playerctl next",
-        "on-scroll-down": "playerctl previous"
+        "on-scroll-down": "playerctl next",
+        "on-scroll-up": "playerctl previous"
     },
 
     "network": {
