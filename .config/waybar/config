@@ -1,14 +1,14 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 34,
+    "height": 50,
     "margin-top": 5,
     "margin-left": 10,
     "margin-right": 10,
 
-    "modules-left": ["niri/workspaces", "niri/window"],
-    "modules-center": ["clock", "cpu", "custom/fan", "memory", "network", "pulseaudio", "battery"],
-    "modules-right": ["tray"],
+    "modules-left": ["niri/workspaces", "niri/window", "mpris"],
+    "modules-center": ["clock", "cpu", "memory", "custom/fan",],
+    "modules-right": ["network", "pulseaudio", "battery", "tray"],
 
     "niri/workspaces": {
         "format": "{index} <span color='#585b70'>:</span> {icon}",
@@ -25,27 +25,39 @@
         "separate-outputs": true
     },
 
+    "mpris": {
+        "format": "󰏤 {title}",
+        "format-paused": "󰐊 {title}",
+        "max-length": 25,
+        "interval": 0.8, 
+        "on-click": "playerctl play-pause",
+        "on-scroll-up": "playerctl next",
+        "on-scroll-down": "playerctl previous"
+    },
+
     "network": {
         "interval": 2,
-        "format-wifi": " {bandwidthDownBytes:3}  {bandwidthUpBytes:3}  <span size='large'></span>",
-        "format-ethernet": " {bandwidthDownBytes:3}  {bandwidthUpBytes:3} 󰈀",
+        // "format-wifi": " {bandwidthDownBytes:3}  {bandwidthUpBytes:3}  <span size='large'></span>",
+        // "format-ethernet": " {bandwidthDownBytes:3}  {bandwidthUpBytes:3} 󰈀",
+	"format-wifi": "<span size='large'></span> {essid}",
         "format-disconnected": "󰖪 Off"
     },
 
     "cpu": {
-        "format": " {usage}% <span color='#585b70'>@</span> {avg_frequency}GHz",
+        // {usage:2} 强制占2位，防止从 9% 变到 10% 时图标乱动
+        "format": " {usage:>2}% 󰓅 {avg_frequency:>3}GHz",
         "interval": 2
     },
 
     "custom/fan": {
-        "format": "󰈐 {} RPM",
+        "format": "󰈐 {}RPM",
         "interval": 2,
         "exec": "sensors | grep -i 'fan' | awk '{print $2}' | head -n 1",
         "tooltip": false
     },
 
     "memory": {
-        "format": " {percentage}%",
+        "format": " {used:>0.1f}GiB({percentage:>2}%)",
         "interval": 2
     },
 

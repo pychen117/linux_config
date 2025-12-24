@@ -1,6 +1,7 @@
 * {
-    font-family: "JetBrainsMono Nerd Font Mono", "monospace";
+    font-family: "JetBrainsMono Nerd Font", "monospace";
     font-size: 16px;
+    font-weight: bold;
     border: none;
     border-radius: 0;
     font-feature-settings: "tnum"; 
@@ -42,6 +43,7 @@ window#waybar {
 
 
 /* --- 防抖设置 --- */
+
 #clock, #cpu, #custom-fan, #memory, #network, #pulseaudio, #battery, #tray {
     background: rgba(30, 30, 46, 0.85);
     color: #cdd6f4;
@@ -51,10 +53,32 @@ window#waybar {
     border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-#cpu { min-width: 140px; color: #fab387; }
+
+/* --- 音乐模块专用样式 (实现无音乐透明) --- */
+#mpris.playing, 
+#mpris.paused {
+    background: rgba(30, 30, 46, 0.85);
+    color: #f5c2e7;
+    padding: 2px 12px;
+    margin: 4px 4px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    min-width: 150px;
+}
+
+/* 如果没有任何播放器运行，或者播放器已关闭，强制隐藏（防止残留黑色空白） */
+#mpris {
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+
+#cpu { min-width: 160px; color: #fab387; }
 #custom-fan { min-width: 95px; color: #94e2d5; }
-#memory { min-width: 60px; color: #a6e3a1; }
-#network { min-width: 250px; color: #89dceb; }
+#memory { min-width: 50px; color: #a6e3a1; }
+#network { min-width: 60px; color: #89dceb; }
 #clock { min-width: 250px; color: #f9e2af; }
-#pulseaudio { min-width: 60px; color: #b4befe; }
-#battery { min-width: 60px; color: #94e2d5; }
+#pulseaudio { min-width: 50px; color: #b4befe; }
+#battery { min-width: 50px; color: #94e2d5; }

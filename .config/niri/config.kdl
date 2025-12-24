@@ -7,10 +7,11 @@
 // Find the full list of options on the wiki:
 // https://yalter.github.io/niri/Configuration:-Input
 
-//cursor {
-//    xcursor-theme "breeze-cursors"
-//    xcursor-size 27
-//}
+// use command "ls /usr/share/icons && ls ~/.icons" to find icons.
+cursor {
+    xcursor-theme "Bibata-Modern-Ice"
+    xcursor-size 24
+}
 
 environment {
     "ELECTRON_OZONE_PLATFORM_HINT" "auto"
@@ -396,9 +397,9 @@ binds {
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+T hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
-    Mod+R hotkey-overlay-title="Run an Application: fuzzel" { spawn-sh "wofi --show drun"; }
+    Mod+R hotkey-overlay-title="Run an Application: wofi" { spawn-sh "wofi --show drun"; }
     Mod+E hotkey-overlay-title="Open the files: dolphin" { spawn "dolphin"; }
-    Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; } 
+    Super+L hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "hyprlock"; } 
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
