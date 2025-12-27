@@ -8,6 +8,7 @@
 // https://yalter.github.io/niri/Configuration:-Input
 
 // use command "ls /usr/share/icons && ls ~/.icons" to find icons.
+
 cursor {
     xcursor-theme "Bibata-Modern-Ice"
     xcursor-size 24
@@ -306,8 +307,11 @@ spawn-at-startup "swaync"
 // 'swww-daemon -n overview'
 // 'swww img ~/Pictures/shiinamahiru.png --transition-type wave --transition-fps 60'
 // 'swww img -n overview ~/Pictures/shiinamahiru.png --transition-type wave --transition-fps 60'
-spawn-sh-at-startup "swww-daemon & sleep 2 && swww img /home/cyp/Pictures/shiinamahiru.png --transition-type wave --transition-fps 60"
-spawn-sh-at-startup "swww-daemon -n overview & sleep 2 && swww img -n overview /home/cyp/Pictures/shiinamahiru.png --transition-type wave --transition-fps 60"
+// spawn-sh-at-startup "swww-daemon & sleep 2 && swww img /home/cyp/Pictures/shiinamahiru.png --transition-type wave --transition-fps 60"
+// spawn-sh-at-startup "swww-daemon -n overview & sleep 2 && swww img -n overview /home/cyp/Pictures/shiinamahiru.png --transition-type wave --transition-fps 60"
+spawn-at-startup "swww-daemon"
+spawn-sh-at-startup "swww-daemon -n overview"
+spawn-sh-at-startup "waypaper --restore"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
@@ -414,7 +418,8 @@ binds {
     Mod+T hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
     Mod+R hotkey-overlay-title="Run an Application: wofi" { spawn-sh "wofi --show drun"; }
     Mod+E hotkey-overlay-title="Open the files: dolphin" { spawn "dolphin"; }
-    Super+L hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "hyprlock"; } 
+    Super+L hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "hyprlock"; }
+    Mod+P { spawn "waypaper"; }
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.

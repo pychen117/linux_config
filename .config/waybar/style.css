@@ -82,7 +82,7 @@ window#waybar {
 #cpu { min-width: 150px; color: #fab387; }
 #custom-fan { min-width: 50px; color: #94e2d5; }
 #memory { min-width: 50px; color: #a6e3a1; }
-#network { min-width: 60px; color: #89dceb; }
+#network { min-width: 50px; color: #89dceb; }
 #clock { min-width: 150px; color: #f9e2af; }
 #pulseaudio { min-width: 50px; color: #b4befe; }
 #battery { min-width: 50px; color: #94e2d5; }

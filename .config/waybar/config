@@ -21,21 +21,20 @@
         "format": "{index}<span color='#585b70'>:</span>{icon}",
         "format-icons": {
             "default": "󰊠",
-            "focused": "󰮯",
-            "urgent": "󰀨"
+            "focused": "󰮯"
         }
     },
 
     "niri/window": {
         "format": "{title}",
-        "max-length": 35,
+        "max-length": 20,
         "separate-outputs": true
     },
 
     "mpris": {
         "format": "󰏤 {title}",
         "format-paused": "󰐊 {title}",
-        "max-length": 25,
+        "max-length": 20,
         "interval": 0.8, 
         "on-click": "playerctl play-pause",
         "on-scroll-down": "playerctl next",
@@ -44,9 +43,9 @@
 
     "network": {
         "interval": 2,
-        // "format-wifi": " {bandwidthDownBytes:3}  {bandwidthUpBytes:3}  <span size='large'></span>",
-        // "format-ethernet": " {bandwidthDownBytes:3}  {bandwidthUpBytes:3} 󰈀",
-	"format-wifi": "<span size='large'></span> {essid}",
+        // "format-wifi": " {bandwidthDownBytes:3}  {bandwidthUpBytes:3}  <span size='large'> </span>",
+        // "format-ethernet": " {bandwidthDownBytes:3}  {bandwidthUpBytes:3} 󰈀 ",
+	"format-wifi": "<span size='large'> </span>{essid}",
         "format-disconnected": "󰖪 Off"
     },
 
@@ -59,7 +58,6 @@
         "format": "󰈐 {}RPM",
         "interval": 2,
         "exec": "sensors | grep -i 'fan' | awk '{print $2}' | head -n 1",
-        "tooltip": false
     },
 
     "memory": {
