@@ -14,19 +14,20 @@ window#waybar {
 
 #custom-overview-icon {
     background: rgba(30, 30, 46, 0.85);
-    color: #f5c2e7;
-    padding: 2px 12px;
-    margin: 4px 4px;
+    color: #E95420;
+    padding-left: 17px;  
+    padding-right: 13px;  
+    margin: 4px 6px;
     border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    font-size: 18px; 
+    border: 1px solid rgba(233, 84, 32, 0.3); 
+    font-size: 22px; 
     transition: all 0.3s ease;
 }
 
 /* 鼠标悬停时的效果 */
 #custom-overview-icon:hover {
-    background: rgba(49, 50, 68, 0.9);
-    color: #fab387; 
+    background: #772953;
+    color: #ffffff; 
 }
 
 #workspaces {

@@ -12,7 +12,7 @@
     "modules-right": ["network", "pulseaudio", "battery", "tray" ],
 
     "custom/overview-icon": {
-        "format": "󰕰", 
+        "format": " ", 
 	"on-click": "niri msg action toggle-overview",
 	"on-click-right": "pkill wofi || wofi --show drun --location top_left --xoffset 50 --yoffset 50",
     },
