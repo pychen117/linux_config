@@ -7,12 +7,18 @@
     "margin-left": 10,
     "margin-right": 10,
 
-    "modules-left": ["niri/workspaces", "niri/window" ],
+    "modules-left": ["custom/overview-icon", "niri/workspaces", "niri/window" ],
     "modules-center": ["mpris", "clock", "cpu", "memory", "custom/fan",],
     "modules-right": ["network", "pulseaudio", "battery", "tray" ],
 
+    "custom/overview-icon": {
+        "format": "󰕰", 
+	"on-click": "niri msg action toggle-overview",
+	"on-click-right": "pkill wofi || wofi --show drun --location top_left --xoffset 50 --yoffset 50",
+    },
+
     "niri/workspaces": {
-        "format": "{index} <span color='#585b70'>:</span> {icon}",
+        "format": "{index}<span color='#585b70'>:</span>{icon}",
         "format-icons": {
             "default": "󰊠",
             "focused": "󰮯",
@@ -45,7 +51,6 @@
     },
 
     "cpu": {
-        // {usage:2} 强制占2位，防止从 9% 变到 10% 时图标乱动
         "format": " {usage:>2}% 󰓅 {avg_frequency:>3}GHz",
         "interval": 2
     },
