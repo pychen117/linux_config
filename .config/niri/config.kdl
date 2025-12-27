@@ -301,6 +301,14 @@ spawn-at-startup "fcitx5"
 spawn-at-startup "xwayland-satellite"
 spawn-at-startup "swaync"
 
+// use 'niri msg layers' to find layer/overview
+// 'swww-daemon'
+// 'swww-daemon -n overview'
+// 'swww img ~/Pictures/shiinamahiru.png --transition-type wave --transition-fps 60'
+// 'swww img -n overview ~/Pictures/shiinamahiru.png --transition-type wave --transition-fps 60'
+spawn-sh-at-startup "swww-daemon & sleep 2 && swww img /home/cyp/Pictures/shiinamahiru.png --transition-type wave --transition-fps 60"
+spawn-sh-at-startup "swww-daemon -n overview & sleep 2 && swww img -n overview /home/cyp/Pictures/shiinamahiru.png --transition-type wave --transition-fps 60"
+
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
 
@@ -332,7 +340,7 @@ animations {
     // off
 
     // Slow down all animations by this factor. Values below 1 speed them up instead.
-    // slowdown 3.0
+    // slowdown 0.8
 }
 
 // Window rules let you adjust behavior for individual windows.
@@ -378,6 +386,13 @@ window-rule {
     draw-border-with-background false
 
     opacity 0.95
+}
+
+// Put swaybg inside the overview backdrop.
+layer-rule {
+    match namespace="swww-daemonoverview"
+    place-within-backdrop true
+    opacity 0.3
 }
 
 binds {

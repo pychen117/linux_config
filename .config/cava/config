@@ -1,0 +1,36 @@
+[general]
+# 帧率
+framerate = 120
+
+# 柱状图的宽度和间距（数值越小越精致）
+bar_width = 1
+bar_spacing = 1
+
+[output]
+method = ncurses
+
+[color]
+# --- 核心：渐变色设置 ---
+# 使用和你 Fish/Kitty 类似的青色到紫色的渐变
+gradient = 1
+gradient_count = 8
+gradient_color_1 = '#9ece6a' # 绿色
+gradient_color_2 = '#73daca' # 青色
+gradient_color_3 = '#b4f9f8' # 浅蓝
+gradient_color_4 = '#7aa2f7' # 蓝色
+gradient_color_5 = '#bb9af7' # 紫色
+gradient_color_6 = '#ff007c' # 粉色
+gradient_color_7 = '#f7768e' # 红色
+gradient_color_8 = '#ff9e64' # 橙色
+
+[smoothing]
+# 让柱状图跳动更有“肉感”，不生硬
+monstercat = 1
+waves = 1
+# 灵敏度，如果觉得跳得太低可以调高
+gravity = 100
+integral = 70
+
+[input]
+method = pulse 
+source = auto
