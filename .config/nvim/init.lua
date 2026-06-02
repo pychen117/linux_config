@@ -13,7 +13,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
   
-  { "nvim-tree/nvim-tree.lua", dependencies = { "nvim-tree/nvim-web-devicons" },
+  { "nvim-tree/nvim-tree.lua", tag = "compat-nvim-0.9", dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function() require("nvim-tree").setup({ view = { width = 30, side = "left" } }) end },
     
   { "akinsho/toggleterm.nvim",
