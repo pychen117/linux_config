@@ -28,6 +28,20 @@ require("lazy").setup({
     
   { "goolord/alpha-nvim", config = function() require("alpha").setup(require("alpha.themes.dashboard").config) end },
 
+  -- -- 右上角缩略图 minimap（暂不启用）
+  -- {
+  --   "wfxr/minimap.vim",
+  --   build = "cargo install --locked code-minimap",
+  --   init = function()
+  --     vim.g.minimap_width = 10
+  --     vim.g.minimap_auto_start = 1
+  --     vim.g.minimap_auto_start_win_enter = 1
+  --     vim.g.minimap_highlight_range = 1
+  --     vim.g.minimap_highlight_search = 1
+  --     vim.g.minimap_git_colors = 1
+  --   end,
+  -- },
+
   -- ✅ 新增：顶部多开文件标签栏
   {
     "akinsho/bufferline.nvim",
@@ -65,5 +79,12 @@ vim.keymap.set("n", "<leader>h", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev 
 vim.keymap.set("n", "<leader>l", "<cmd>BufferLineCycleNext<cr>", { desc = "Next Buffer" })
 vim.keymap.set("n", "<leader>q", "<cmd>bdelete<cr>", { desc = "Close Buffer" })
 
--- 6. 应用主题
+-- 6. 外部文件变更自动刷新（类 tail -f）
+vim.opt.autoread = true
+vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
+  pattern = "*",
+  command = "silent! checktime",
+})
+
+-- 7. 应用主题
 vim.cmd.colorscheme("catppuccin-mocha")
