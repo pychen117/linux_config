@@ -1,0 +1,17 @@
+# ---- 字体设置 ----
+font-family = "JetBrainsMono Nerd Font Mono"
+font-size = 10
+
+# ---- 主题设置 ----
+#theme = /usr/share/ghostty/themes/Catppuccin Mocha
+theme = /usr/share/ghostty/themes/TokyoNight Night
+#theme = /usr/share/ghostty/themes/GitHub Dark Colorblind
+
+# ---- 窗口外观  ----
+background-opacity = 0.8
+background-blur = 20
+
+# 窗口装饰和边距
+window-padding-x = 10
+window-padding-y = 10
+
