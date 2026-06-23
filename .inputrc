@@ -1,0 +1,4 @@
+# 自动补全忽略大小写
+set completion-ignore-case on
+# TAB 一次显示所有匹配项
+set show-all-if-ambiguous on
